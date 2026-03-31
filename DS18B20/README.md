@@ -37,5 +37,5 @@ _main.cpp:_
 - Lib DallasTemperature offers implementation freedom, see .setWaitForConversion(false).
 - Time differences evaluated using millis().
 - During idle time the processor is free to handle other sensors, web server etc.
-- Idle time takes processing time into account => eg. reading each 5000ms - processing 750ms = 4250ms
+- Idle time takes processing time into account => eg. reading each 5000ms - processing 750ms = idle 4250ms
 
