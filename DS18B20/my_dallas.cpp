@@ -226,8 +226,8 @@ void MyDs18b20::loop_AllSensors() {
                 }(results[i]);
             }
 
-                startingMillis += idleTime;     // to pre precisely deterministic without drift , ie. 10 - 20 - 30 - 40, not 10 - 20.01 - 30.01 - 40.05
-                smLoop = SmLoop::Idle;
+            startingMillis += idleTime;     // to pre precisely deterministic without drift , ie. 10 - 20 - 30 - 40, not 10 - 20.01 - 30.01 - 40.05
+            smLoop = SmLoop::Idle;
         break;
         
         default:
