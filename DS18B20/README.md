@@ -1,7 +1,9 @@
 ## Dallas DS18B20 implementation class features:
 - ESP8266 / ESP32
 - processor run: non-blocking class
-- uses OneWire and DallasTemperature libraries
+- uses OneWire and DallasTemperature libraries:
+	- OneWire by Paul Stoffregen (v2.3.8)
+	- DallasTemperature by Miles Burton (v4.0.6)
 - offers sensors discovery
 - VSCode + PlatformIO files location within project:
     - /include/my_dallas.hpp
