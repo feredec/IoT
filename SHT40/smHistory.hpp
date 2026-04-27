@@ -6,33 +6,6 @@
 const size_t SM_BUF_LEN = 64;
 const size_t SM_HIST_SIZE = 40;
 
-/**
- * Generic Shift register - Forward
- * Pushes data forward, the oldest value gets lost.
- * Index [0] of the array receives the newVal
- * Be newVal a structured datatype, a temporary object my be needed.
- */
-template <typename T>
-void shiftRegF(T pArr[], size_t len, const T& newVal) {
-	if (len > 1) {
-		memmove((pArr + 1), (pArr), (len - 1) * sizeof(T));
-	}
-	*pArr = newVal;
-}
-
-/**
- * Generic Shift register - Forward
- * Pushes data forward, oldest value gets lost.
- * New value to be written directly to [0] after call, 
- * ie. without temp. object.
- */
-template <typename T>
-void shiftRegF(T pArr[], size_t len) {
-	if (len > 1) {
-		memmove((pArr + 1), (pArr), (len - 1) * sizeof(T));
-	}
-}
-
 
 template <typename S>
 struct tStateMachineHistoryItem {
@@ -52,6 +25,34 @@ struct SmHistory {
     
     char buf[SM_BUF_LEN];
     
+    /**
+     * Generic Shift register - Forward
+     * Pushes data forward, the oldest value gets lost.
+     * Index [0] of the array receives the newVal
+     * Be newVal a structured datatype, a temporary object my be needed.
+     */
+    template <typename T>
+    void shiftRegF(T pArr[], size_t len, const T& newVal) {
+        if (len > 1) {
+            memmove((pArr + 1), (pArr), (len - 1) * sizeof(T));
+        }
+        *pArr = newVal;
+    }
+
+    /**
+     * Generic Shift register - Forward
+     * Pushes data forward, oldest value gets lost.
+     * New value to be written directly to [0] after call, 
+     * ie. without temp. object.
+     */
+    template <typename T>
+    void shiftRegF(T pArr[], size_t len) {
+        if (len > 1) {
+            memmove((pArr + 1), (pArr), (len - 1) * sizeof(T));
+        }
+    }
+
+
     void SaveHistory(const char* stepName) {
 
         if (step != history[0].step) {
