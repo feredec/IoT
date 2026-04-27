@@ -18,8 +18,9 @@ _main.cpp:_
     constexpr uint8_t I2C_ADDR = 0x44;
     constexpr uint8_t I2C_BUS_SDA_PIN = 4;                // GPIO4 = D2
     constexpr uint8_t I2C_BUS_SCL_PIN = 5;                // GPIO5 = D1
+    constexpr unsigned READ_INTERVAL = 5000;
     
-    MySht40 sht40(I2C_ADDR, I2C_BUS_SDA_PIN, I2C_BUS_SCL_PIN, 3000);
+    MySht40 sht40(I2C_ADDR, I2C_BUS_SDA_PIN, I2C_BUS_SCL_PIN, READ_INTERVAL);
     
     void setup() {
       sht40.setup();
