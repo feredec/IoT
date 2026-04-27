@@ -9,8 +9,6 @@ enum class Sm_Sht40 : unsigned {
     RunOnce,
     Idle,
     Measure,
-    // WaitForConversion,
-    // Process,
     Output,
     Error
 };
