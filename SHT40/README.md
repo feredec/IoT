@@ -3,7 +3,7 @@
 - processor run: non-blocking class
 - uses Wire and SensirionI2cSht4x libraries
     - Wire by Arduino (built-in)
-    - Sensirion I2C SHT4x by Sensirion
+    - Sensirion I2C SHT4x by Sensirion (v1.1.2)
 - VSCode + PlatformIO files location within project:
     - /include/my_sht40.hpp
     - /src/my_sht40.cpp
