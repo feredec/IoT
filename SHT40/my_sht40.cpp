@@ -7,7 +7,7 @@ void MySht40::setup() {
 
     Wire.begin(this->i2c_sda, this->i2c_scl); //
 
-    sensor.begin(Wire, SHT40_I2C_ADDR_44);
+    sensor.begin(Wire, this->addr);
 
     sensor.softReset();
     delay(10);
